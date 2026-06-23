@@ -1,78 +1,105 @@
 # Superstore Sales Dashboard with Streamlit
+
 ![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)
-![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
-![HTML](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E.svg?style=for-the-badge&logo=Supabase&logoColor=white)
-![Postgresql](https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75.svg?style=for-the-badge&logo=Plotly&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7.svg?style=for-the-badge&logo=Render&logoColor=white)
-![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
-![Microsoft Office](https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)
-![Microsoft Word](https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)
 
-## Overview
+An interactive, high-performance Business Intelligence (BI) and sales analytics dashboard built from scratch using Python, Streamlit, Pandas, and Plotly.
 
-Superstore Sales with Streamlit is a data visualization and analysis project that uses the Streamlit framework to create an interactive web application for exploring and analyzing sales data from a superstore. This project aims to provide an easy-to-use interface for users to gain insights into sales trends, Sales performance, product performance, Shippin analysis and Location analysis.
+---
 
-## Deployment
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://tushar2704-superstore-dashboard.streamlit.app/)
+## Technology Stack
+- **Dashboard Framework**: Streamlit (web application wrapper)
+- **Data Wrangling & Processing**: Pandas, NumPy
+- **Interactive Visualizations**: Plotly Express & Plotly Graph Objects
+- **Styling Layer**: Vanilla CSS3 (custom cards, transitions, custom fonts, hover effects)
+- **File Export Engines**: openpyxl (Excel export), python-csv (CSV export)
 
-
-
-## Preview
-![3dash](https://github.com/tushar2704/Superstore-Sales-Dashboard-with-Streamlit/assets/66141195/ca77655e-b101-44e9-b5e7-fcdbf5aae388)
-
-
-## Dataset
-- Stored in cloud on personal <a href="https://www.linkedin.com/in/tusharaggarwalinseec/">![Supabase](https://img.shields.io/badge/Supabase-3FCF8E.svg?style=for-the-badge&logo=Supabase&logoColor=white)</a> on POSTGRSQL server
+---
 
 ## Features
 
-- **Interactive Data Visualization**: Visualize sales data through dynamic charts and graphs.
-- **Filter and Search**: Easily filter data by date, product category, region, and more.
-- **Sales Trends**: Analyze sales trends over time to make informed decisions.
-- **Customer Insights**: Gain insights into customer behavior and demographics.
-- **Product Performance**: Evaluate the performance of different product categories.
-- **Export Data**: Download selected data for further analysis.
+### 1. Custom Responsive Interface
+- Styled with modern typography (Outfit Google Font) and responsive glassmorphic KPI cards.
+- Dark linear-gradient accenting matching the customized Streamlit theme.
+
+### 2. Global Dynamic Filter Panel
+- Date range selectors, Region, customer segment, category, and shipping mode filters.
+- **Hierarchical drill-downs**: Selecting a Region dynamically updates the State options; selecting a State dynamically updates the City options.
+
+### 3. Key Performance Indicators (KPIs)
+- Real-time updates for **Total Sales**, **Total Profit**, **Profit Margin (%)**, **Total Orders**, and **Average Discount (%)**.
+- Comparative badges displaying performance changes vs. the preceding period of the same duration.
+
+### 4. Interactive Tabs / Analysis Views
+1. **Overview (Executive Summary)**:
+   - Monthly sales vs. profit trend chart.
+   - Donut chart of sales by customer segments.
+   - Bar chart of sales by category and top 5 states.
+   - **Filtered Raw Data Preview** section to inspect the first 50 rows matching active filters.
+2. **Sales & Profit**:
+   - Month-over-month sales growth rates.
+   - Customer Segment vs. Product Sub-Category profit margin heatmap.
+3. **Product Performance**:
+   - Sales vs. Profit correlation scatter plot (size maps quantity, color maps category).
+   - Top 10 most profitable and bottom 10 loss-making products.
+4. **Geographic & Shipping**:
+   - Interactive US State sales volume choropleth map.
+   - Average shipping delay (days between order and ship dates) by mode, alongside monthly shipping delay trends.
+5. **Customer Insights**:
+   - Top 10 customer list by sales and profits, and purchase frequency histograms.
+6. **Data Explorer**:
+   - **Browse & Export**: Dynamic column selector, text search, and download buttons to export data as CSV or Excel (`openpyxl` engine).
+   - **Metadata & Diagnostics**: Displays column data types, unique counts, duplicates checks, missing values analysis, and numeric descriptive statistics.
+
+---
 
 ## Project Structure
-
-The project repository is organized as follows:
-
+```
+├── .streamlit/
+│   └── config.toml         # Primary color themes & font config
+├── data_query/
+│   ├── db.sql              # Database schema definition
+│   └── superstore.csv      # Raw database file (comma-separated values)
+├── reports/
+│   └── README.md           # Reports placeholder
+├── src/
+│   ├── data/
+│   │   ├── Superstore.csv  # Dashboard transaction dataset (9,994 rows)
+│   │   └── superstore_original.xls # Original Excel file
+│   └── images/
+│       └── logo.png        # Source branding asset
+├── .gitignore              # Files to ignore in Git
+├── app.py                  # Main Streamlit dashboard script
+├── requirements.txt        # Package dependencies
+└── README.md               # Project documentation
 ```
 
-├── LICENSE
-├── README.md           <- README .
-├── notebooks           <- Folder containing the final reports/results of this project.
-│   │
-│   └── bank_german_customer_segmentation.py   <- Final notebook for the project.
-├── reports            <- Folder containing the final reports/results of this project.
-│   │
-│   └── Pizza_Sales_Report.pdf   <- Final analysis report in PDF.
-│   
-├── src                <- Source for this project.
-│   │
-│   └── data           <- Datasets used and collected for this project.
-|   └── model          <- Model.
-```
+---
+
+## Installation & Running
+
+1. **Navigate to the directory**:
+   ```bash
+   cd E:\Superstore-Sales-Dashboard-with-Streamlit
+   ```
+2. **Install required packages**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Streamlit application**:
+   ```bash
+   streamlit run app.py
+   ```
+4. **View the dashboard** in your browser at:
+   - **[http://localhost:8501](http://localhost:8501)**
+
+---
+
 ## License
-
-This project is rebuilt and maintained by Nitishkumar Khavekar.
+This project is rebuilt and maintained by **Nitishkumar Khavekar**.
 
 ## Author
 - <ins><b>©2026 Nitishkumar Khavekar. All rights reserved</b></ins>
-
-## Contact
-If you have any questions, suggestions, or just want to say hello, you can reach out to us. We would love to hear from you!
-
-
-
-
-

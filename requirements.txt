@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+plotly
+plotly.express
+matplotlib
+requests
+openpyxl
+xlrd
+streamlit-option-menu
