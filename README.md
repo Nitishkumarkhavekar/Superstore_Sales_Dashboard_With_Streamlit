@@ -98,8 +98,7 @@ An interactive, high-performance Business Intelligence (BI) and sales analytics 
 
 ---
 
-## License
-This project is rebuilt and maintained by **Nitishkumar Khavekar**.
+## 🖼️ User Interface Preview
 
-## Author
-- <ins><b>©2026 Nitishkumar Khavekar. All rights reserved</b></ins>
+
+![Superstore_Sales_Dashboard Preview](Superstore_Sales_SS.png)
